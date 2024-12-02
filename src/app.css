@@ -14,14 +14,14 @@
 
 @layer components {
 	.h1 {
-		@apply font-editors text-4xl font-medium md:text-5xl lg:text-5.5xl;
+		@apply font-editors text-4xl md:text-5xl lg:text-5.5xl;
 	}
 	.h1-legal {
 		@apply mb-2 text-4xl font-medium;
 	}
 
 	.h2 {
-		@apply font-editors text-3xl font-normal tracking-medium-wide;
+		@apply font-editors text-3xl font-medium;
 	}
 
 	.h2-legal {
@@ -49,67 +49,69 @@
 	}
 }
 
+/* Retina */
 @font-face {
 	font-family: 'Retina';
-	src: url('/fonts/retina-light.woff2') format('woff2');
+	src: url('/fonts/retina/light.woff2') format('woff2');
 	font-weight: 300;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Retina';
-	src: url('/fonts/retina-light-italic.woff2') format('woff2');
+	src: url('/fonts/retina/light-italic.woff2') format('woff2');
 	font-weight: 300;
 	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Retina';
-	src: url('/fonts/retina-book.woff2') format('woff2');
+	src: url('/fonts/retina/normal.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Retina';
-	src: url('/fonts/retina-book-italic.woff2') format('woff2');
-	font-weight: 400;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Retina';
-	src: url('/fonts/retina-medium.woff2') format('woff2');
+	src: url('/fonts/retina/medium.woff2') format('woff2');
 	font-weight: 500;
 	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Retina';
-	src: url('/fonts/retina-medium-italic.woff2') format('woff2');
-	font-weight: 500;
-	font-style: italic;
+	font-display: swap;
 }
 
 /* Editor's Note */
 @font-face {
 	font-family: 'Editors';
-	src:
-		url('/fonts/editors-note/regular.woff2') format('woff2'),
-		url('/fonts/editors-note/regular.woff') format('woff');
+	src: url('/fonts/editors-note/normal.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
-/* Helvetica */
+/* Fallback fonts */
 @font-face {
-	font-family: 'Helvetica';
-	src: url('/fonts/helvetica/Helvetica-Bold.ttf') format('truetype');
-	font-weight: 600;
+	font-family: 'TNR Fallback';
+	src: local('Times New Roman');
+	size-adjust: 99%;
+	ascent-override: 75%;
+	line-gap-override: 24%;
 }
 
 @font-face {
-	font-family: 'Helvetica';
-	src: url('/fonts/helvetica/Helvetica.ttf') format('truetype');
-	font-weight: 400;
+	font-family: 'Tahoma Fallback';
+	src: local('Tahoma');
+	size-adjust: 97%;
+	ascent-override: 87%;
+	line-gap-override: 12%;
+}
+
+@font-face {
+	font-family: 'Arial Fallback';
+	src: local('Arial');
+	size-adjust: 98%;
+	ascent-override: 84%;
+	line-gap-override: 19%;
 }

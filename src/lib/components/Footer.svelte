@@ -1,6 +1,5 @@
 <script>
 	import SlidingBottomBorder from '$lib/animations/SlidingBottomBorder.svelte';
-	import logo from '$lib/assets/logo.svg';
 </script>
 
 <footer class="z-50 bg-white">
@@ -9,7 +8,7 @@
 			class="flex h-32 flex-row place-items-stretch border-t-2 border-black py-6 md:h-36 md:py-8 lg:h-40 lg:py-8"
 		>
 			<a href="/" class="ml-5 flex h-full flex-row gap-x-5">
-				<img src={logo} alt="Logo" class="h-full object-contain" />
+				<img src="/favicon.svg" alt="Caduceus" class="h-full object-contain" />
 				<div class="grid min-h-full grid-rows-3 items-stretch">
 					<div class="w-[3px] bg-black"></div>
 					<div class="w-[3px] bg-german-red"></div>

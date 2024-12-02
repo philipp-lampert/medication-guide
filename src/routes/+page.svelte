@@ -1,5 +1,5 @@
 <script>
-	import Indications from '$lib/tables/Indications.svelte';
+	import Indications from '../lib/tables/Indications.svelte';
 	import Contraindications from '$lib/tables/Contraindications.svelte';
 	import SeeDoctor from '$lib/tables/SeeDoctor.svelte';
 	import SlidingBottomBorder from '$lib/animations/SlidingBottomBorder.svelte';
@@ -62,10 +62,10 @@
 			<h2 class="h2">Differences between over-the-counter analgesics</h2>
 			<p class="max-w-4xl">
 				Pain relievers differ in how they work and the side effects they may cause. Not all are
-				effective for every type of pain, nor are they safe for everyone. Selecting the right
-				analgesic requires careful consideration of both the desired therapeutic effects and
-				potential risks. The tables below highlights the most important distinctions. For a
-				personalized recommendation, use our <a class="text-link group" href="/interactive"
+				effective for every type of pain, nor safe for everyone. Selecting the right analgesic
+				requires careful consideration of both the desired therapeutic effects and potential risks.
+				The tables below highlight the most important distinctions. For a personalized
+				recommendation, use our <a class="text-link group" href="/interactive"
 					>interactive guide<SlidingBottomBorder /></a
 				>.
 			</p>

@@ -1,6 +1,5 @@
 <script>
 	import SlidingBottomBorder from '$lib/animations/SlidingBottomBorder.svelte';
-	import logo from '$lib/assets/logo.svg';
 	import ArrowDoubleRight from '$lib/assets/icons/buttons/ArrowDoubleRight.svelte';
 
 	let yScroll = $state(0);
@@ -47,7 +46,7 @@
 					? 'py-3'
 					: 'py-4 sm:py-6 md:py-7'}"
 			>
-				<img src={logo} alt="Caduceus" class="h-full object-contain" />
+				<img src="/favicon.svg" alt="Caduceus" class="h-full object-contain" />
 				<div class="grid min-h-full grid-rows-3 items-stretch">
 					<div class="w-[3px] bg-black"></div>
 					<div class="w-[3px] bg-german-red"></div>

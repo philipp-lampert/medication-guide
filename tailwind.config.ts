@@ -13,10 +13,9 @@ export default {
 				'5.5xl': ['3.375rem', '1']
 			},
 			fontFamily: {
-				retina: ['Retina, Tahoma, Arial, sans-serif'],
-				times: ['Times New Roman, serif'],
-				editors: ['Editors, Times New Roman, serif'],
-				helvetica: ['Helvetica, sans-serif']
+				retina: ['Retina, Tahoma Fallback, Arial Fallback, sans-serif'],
+				editors: ['Editors, TNR Fallback, serif'],
+				mallory: ['Mallory, sans-serif']
 			},
 			letterSpacing: {
 				'medium-wide': '0.015em'

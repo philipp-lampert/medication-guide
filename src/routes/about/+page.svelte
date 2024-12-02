@@ -26,7 +26,7 @@
 
 <section class="section">
 	<article class="container flex flex-col items-center">
-		<h1 class="h1 mb-3">Medication Guide</h1>
+		<h1 class="h1 mb-1">Medication Guide</h1>
 		<h2 class="mb-12 text-lg italic sm:text-xl md:text-2xl">
 			Interactive Tools for Better Health Decisions
 		</h2>

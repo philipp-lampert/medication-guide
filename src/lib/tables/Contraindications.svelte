@@ -3,7 +3,7 @@
 
 	const statusNames: { [key: number]: string } = {
 		1: 'Safe',
-		0.5: 'Avoid',
+		0.5: 'Caution',
 		0: 'High risk'
 	};
 
