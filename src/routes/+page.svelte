@@ -1,5 +1,5 @@
 <script>
-	import Indications from '$lib/tables/Indications.svelte';
+	import Indications from '../lib/tables/Indications.svelte';
 	import Contraindications from '$lib/tables/Contraindications.svelte';
 	import SeeDoctor from '$lib/tables/SeeDoctor.svelte';
 	import SlidingBottomBorder from '$lib/animations/SlidingBottomBorder.svelte';
