@@ -248,6 +248,6 @@
 		}
 	],
 	"audience": "https://schema.org/Patient",
-	"description": "Compare the effectiveness and side effects of over-the-counter pain relievers and get a personalized recommendations.",
+	"description": "Compare effectiveness and side effects of over-the-counter pain relievers and receive a personalized recommendation by using our revolutionary interactive guide.",
 	"publicationType": "Patient Education Handout"
 }

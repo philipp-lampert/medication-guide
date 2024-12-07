@@ -1,0 +1,14 @@
+{
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": "Medication Guide",
+	"alternateName": ["Medication Guide™", "The Medication Guide", "MedGuide"],
+	"url": "https://www.medicationguide.org/",
+	"about": {
+		"@type": "Thing",
+		"name": "Medication Guide",
+		"description": "Medication Guide is a revolutionary webapp, quickly and interactively guiding users to the appropriate over-the-counter pain medication by asking personalized questions about symptoms and risk factors.",
+		"url": "https://www.medicationguide.org"
+	},
+	"isAccessibleForFree": "true"
+}

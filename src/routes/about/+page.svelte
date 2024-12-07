@@ -1,6 +1,6 @@
 <script>
 	import SlidingBottomBorder from '$lib/animations/SlidingBottomBorder.svelte';
-	import schemaContent from './Organization.json';
+	import schemaContent from './MedicalOrganization.json';
 	import Schema from '$lib/components/Schema.svelte';
 </script>
 

@@ -62,6 +62,7 @@
 					</span>
 					<a
 						href="/interactive"
+						data-sa-link-event="start_guide_header"
 						class="group relative z-50 flex flex-row items-center gap-1 text-sm font-medium transition-all duration-200 sm:gap-2 {isShrunk
 							? 'opacity-100 delay-200'
 							: 'opacity-0'}"

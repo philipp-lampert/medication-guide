@@ -48,6 +48,7 @@
 			</p>
 			<a
 				href="/interactive"
+				data-sa-link-event="start_guide_main"
 				class="group relative inline-flex items-center overflow-hidden rounded-xl bg-gradient-to-tr
 										   from-black to-gray-700 px-12 py-3 text-center font-normal text-white shadow-3xl transition-all
 											duration-500"
