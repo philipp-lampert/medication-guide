@@ -84,7 +84,9 @@
 	];
 </script>
 
-<table class="w-[650px] table-auto border-collapse rounded-lg bg-white leading-5 md:w-[900px]">
+<table
+	class="w-[650px] table-auto border-collapse rounded-lg bg-white text-center leading-5 md:w-[900px]"
+>
 	<thead>
 		<tr class="bg-gray-100">
 			<th class="w-1/4"></th>

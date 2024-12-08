@@ -7,7 +7,7 @@
 	"about": {
 		"@type": "Thing",
 		"name": "Medication Guide",
-		"description": "Medication Guide is a revolutionary webapp, quickly and interactively guiding users to the appropriate over-the-counter pain medication by asking personalized questions about symptoms and risk factors.",
+		"description": "Medication Guide offers an interactive quiz that helps patients quickly identify the best pain reliever based on their symptoms and individual risk profile. Unlike traditional methods that require reading long articles, our personalized approach provides a fast, engaging way to make informed decisions. We also offer expert advice through informative articles to further support your health journey.",
 		"url": "https://www.medicationguide.org"
 	},
 	"isAccessibleForFree": "true"
