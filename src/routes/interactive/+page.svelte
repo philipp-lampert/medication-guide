@@ -179,6 +179,16 @@
 			currentIndex--;
 		}
 	}
+
+	function restart() {
+		currentIndex = 0;
+		selectedAnswers = [];
+	}
+
+	function goHome() {
+		window.location.href = '/';
+	}
+	$inspect(currentIndex);
 </script>
 
 <svelte:head>
@@ -194,12 +204,31 @@
 	<meta property="og:url" content="https://medicationguide.org/interactive" />
 </svelte:head>
 
+{#snippet navButton(label: string, icon: string, action: () => void)}
+	<button
+		type="button"
+		onclick={action}
+		class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
+	>
+		<img src={icon} alt={label} class="h-4 pb-0.5" />
+		{label}
+		<SlidingBottomBorder />
+	</button>
+{/snippet}
+
 <div
 	bind:clientHeight={h}
 	class="container my-10 flex min-h-[525px] flex-grow justify-center sm:my-12 sm:min-h-[500px]"
 >
 	{#if currentIndex < questions.length}
-		<ProgressBar {questions} {selectedAnswers} {currentIndex} />
+		<ProgressBar
+			{questions}
+			{selectedAnswers}
+			{currentIndex}
+			clickCircle={(index: number) => {
+				currentIndex = index;
+			}}
+		/>
 	{/if}
 	{#each questions as question, index (index)}
 		{#if index === currentIndex}
@@ -256,24 +285,9 @@
 				<!-- Navigation Buttons -->
 				<div class="mx-10 flex flex-wrap justify-center gap-x-6 gap-y-1">
 					{#if currentIndex > 0}
-						<button
-							type="button"
-							onclick={goBack}
-							class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
-						>
-							<img src={turnAround} alt="Previous" class="h-4 pb-0.5" />
-							Previous
-							<SlidingBottomBorder />
-						</button>
+						{@render navButton('Previous', turnAround, goBack)}
 					{:else}
-						<a
-							href="/"
-							class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
-						>
-							<img src={turnAround} alt="Exit" class="h-4 pb-0.5" />
-							Exit
-							<SlidingBottomBorder />
-						</a>
+						{@render navButton('Exit', turnAround, goHome)}
 					{/if}
 
 					{#if selectedAnswers[currentIndex]?.answers.length > 0}
@@ -344,81 +358,35 @@
 								></div>
 							</div>
 
-							<!-- Positive Reasons -->
-							{#if medicationReasons[medication as Medications].positive.length > 0}
-								<div class="rounded-lg bg-green-100 px-4 py-2 text-left text-sm font-normal">
-									<ul>
-										{#each medicationReasons[medication as Medications].positive as reason}
-											<li>
-												{medicationReasons[medication as Medications].positive.length > 1
-													? '-'
-													: ''}
-												{reason}
-											</li>
-										{/each}
-									</ul>
-								</div>
-							{/if}
+							<!-- Reasons -->
+							{#snippet reasons(type: 'positive' | 'neutral' | 'negative', color: string)}
+								{#if medicationReasons[medication as Medications][type].length > 0}
+									<div class="rounded-lg {color} px-4 py-2 text-left text-sm font-normal">
+										<ul>
+											{#each medicationReasons[medication as Medications][type] as reason}
+												<li>
+													{medicationReasons[medication as Medications][type].length > 1 ? '-' : ''}
+													{reason}
+												</li>
+											{/each}
+										</ul>
+									</div>
+								{/if}
+							{/snippet}
 
-							<!-- Moderate Reasons -->
-							{#if medicationReasons[medication as Medications].neutral.length > 0}
-								<div class="rounded-lg bg-yellow-100 px-4 py-2 text-left text-sm font-normal">
-									<ul>
-										{#each medicationReasons[medication as Medications].neutral as reason}
-											<li>
-												{medicationReasons[medication as Medications].neutral.length > 1 ? '-' : ''}
-												{reason}
-											</li>
-										{/each}
-									</ul>
-								</div>
-							{/if}
-
-							<!-- Negative Reasons -->
-							{#if medicationReasons[medication as Medications].negative.length > 0}
-								<div class="rounded-lg bg-red-100 px-4 py-2 text-left text-sm font-normal">
-									<ul>
-										{#each medicationReasons[medication as Medications].negative as reason}
-											<li>
-												{medicationReasons[medication as Medications].negative.length > 1
-													? '-'
-													: ''}
-												{reason}
-											</li>
-										{/each}
-									</ul>
-								</div>
-							{/if}
+							{@render reasons('positive', 'bg-green-100')}
+							{@render reasons('neutral', 'bg-yellow-100')}
+							{@render reasons('negative', 'bg-red-100')}
 						</div>
 					</div>
 				{/each}
 			</div>
+
+			<!-- Results Buttons -->
 			<div class="flex flex-row gap-6">
-				<button
-					type="button"
-					onclick={goBack}
-					class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
-				>
-					<img src={turnAround} alt="Previous" class="h-4 pb-0.5" />
-					Previous
-					<SlidingBottomBorder />
-				</button>
-				<a
-					data-sveltekit-reload
-					href="/interactive"
-					class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
-				>
-					<img src={reload} alt="Previous" class="h-4 pb-0.5" />
-					Restart
-					<SlidingBottomBorder />
-				</a>
-				<a
-					href="/"
-					class="group relative flex flex-row items-center gap-2.5 overflow-hidden bg-white px-0.5 py-0.5 font-medium"
-					><img src={home} alt="Home" class="h-4 pb-0.5" />
-					Home
-					<SlidingBottomBorder />
-				</a>
+				{@render navButton('Previous', turnAround, goBack)}
+				{@render navButton('Restart', reload, restart)}
+				{@render navButton('Home', home, goHome)}
 			</div>
 		</div>
 	{/if}

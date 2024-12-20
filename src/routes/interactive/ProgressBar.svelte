@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	const { questions, selectedAnswers, currentIndex } = $props();
+	let { questions, selectedAnswers, currentIndex, clickCircle } = $props();
 </script>
 
 <div
@@ -10,13 +10,15 @@
 >
 	{#each questions as _, index}
 		<div class="flex flex-row items-center">
-			<div
+			<button
+				aria-label="Go to question"
 				class="rounded-full transition-all duration-500 {selectedAnswers[index] ||
 				currentIndex === index
 					? 'bg-black'
 					: 'bg-gray-300'}
           {currentIndex === index ? 'h-[18px] w-[18px]' : 'h-3 w-3'}"
-			></div>
+				onclick={() => clickCircle(index)}
+			></button>
 		</div>
 	{/each}
 </div>

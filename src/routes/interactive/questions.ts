@@ -130,7 +130,7 @@ export const questions = [
 	},
 	// Do you have local swelling or inflammation?
 	{
-		text: [{ content: 'Do you have pain in your joints?', highlight: false }],
+		text: [{ content: 'Do you have joint pain?', highlight: false }],
 		type: 'single-choice',
 		answers: [
 			{
